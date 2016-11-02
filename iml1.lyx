@@ -15,7 +15,8 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
-\usepackage{culmus}
+\usepackage[use-david]{culmus}
+\def\L{\protect\pL}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -109,8 +110,403 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Section
+General remarks about machine learning
+\end_layout
+
 \begin_layout Standard
 
+\lang hebrew
+"כמעט בכל אפליקציה יאספו אינפורמציה / לוגים איך לשפר את האפליקציה / את הביצועים"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"הייתי רוצה לחשוב שהמדגם שאני לומד עכשיו יהיה רלוונטי גם למי שיבוא בעתיד"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"אין תחליף ללמצוא את הייצוג הנכון של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ה
+\begin_inset Formula $\text{data }$
+\end_inset
+
+"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"משהו שרוב האנשים מפספסים: אנחנו בוחרים מה לשמור"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"ההנחה שאנחנו דוגמים 
+\begin_inset Formula $\text{iid}$
+\end_inset
+
+ מחביאה הרבה דברים.
+ למשל, האמונה שהעבר והעתיד דומים"
+\end_layout
+
+\begin_layout Section
+ML model: complete information
+\end_layout
+
+\begin_layout Standard
+Notation:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+: instance attributes
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+: instance label (
+\begin_inset Formula $+$
+\end_inset
+
+ or 
+\begin_inset Formula $-$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D(x,y)$
+\end_inset
+
+: joint distribution
+\end_layout
+
+\begin_layout Standard
+Assume we know 
+\begin_inset Formula $D_{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $D_{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D=\lambda D_{+}+\left(1-\lambda\right)D_{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given a point 
+\begin_inset Formula $x$
+\end_inset
+
+, we would like to label it
+\begin_inset Formula 
+\[
+P(+|x)=\frac{P(x|+)p(+)}{P(x)}=\frac{D_{+}(x)\lambda}{D(x)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+0-1 Loss:
+\series default
+ count mistakes.
+ does not discriminate between probabilities.
+ predict 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $p>\nicefrac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Absolute Loss:
+\series default
+ output a number 
+\begin_inset Formula $q\in[0,1]$
+\end_inset
+
+, loss is 
+\begin_inset Formula $\left|y-q\right|$
+\end_inset
+
+ (
+\begin_inset Formula $y$
+\end_inset
+
+ is 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $+$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+ if 
+\begin_inset Formula $-$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L(q)=p(1-q)+(1-p)q=1+(1-2p)q
+\]
+
+\end_inset
+
+ we know 
+\begin_inset Formula $p$
+\end_inset
+
+ and we want to find a minimizing 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ 
+\begin_inset Formula $L'(q)=1-2p$
+\end_inset
+
+, so the minimum is at the boundary.
+ 
+\begin_inset Formula 
+\[
+L(q)=\begin{cases}
+p & q=0\\
+1-p & q=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we will still make the same prediction as in 0-1 loss.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Quadratic loss:
+\series default
+ 
+\begin_inset Formula $\left(y-q\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L(q)=p(1-q)^{2}+(1-p)q^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L'(q)=\mbox{-}2p(1-q)+2q(1-p)=2q-2p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we will predict 
+\begin_inset Formula $q=p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Logarithmic loss: 
+\begin_inset Formula $\begin{cases}
+\mbox{-}\log(q) & y=+\\
+\mbox{-}\log(1-q) & y=-
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again we will predict 
+\begin_inset Formula $q=p$
+\end_inset
+
+.
+ note that the loss here is unbounded
+\end_layout
+
+\begin_layout Section
+Estimating hypothesis error
+\end_layout
+
+\begin_layout Standard
+Error: 
+\begin_inset Formula $p(h(x)\ne y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estimating the error: given a sample 
+\begin_inset Formula $S=((x_{1},y_{1}),...,(x_{m},y_{m}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{m}\sum_{i=1}^{m}I(h(x_{i}\ne y_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Chernoff Inequality: Let 
+\begin_inset Formula $Z_{1},...,Z_{m}$
+\end_inset
+
+ be iid Bernoulli with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(\frac{1}{m}\sum_{i=1}^{m}\left|z_{i}-p\right|\ge\lambda\right)\le2e^{\mbox{-}2\lambda^{2}m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(proof hints in the notes)
+\end_layout
+
+\begin_layout Section
+Other remarks
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"במקום להניח שפונקציית המטרה היא בדיוק קו ישר, אני מניח שאני נותן תחזית
+ לפי קו ישר.
+ זה ניואנס: הנחה על פונקציית התחזית במקום הנחה על פונקציית המטרה"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"היכולת שלנו לעשות הכללה, זה אחד הדברים שהכי יטרידו אותנו"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"פונ' המטרה המתמטית היא אבסטרקציה למה שאנחנו באמת רוצים.
+ הרבה פעמים נשנה אותה כדי להקל את החישוב"
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+"משנים את המטרה ועוקפים את הקושי"
 \end_layout
 
 \end_body
