@@ -15,7 +15,7 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
-\usepackage[use-david]{culmus}
+\usepackage{culmus}
 \def\L{\protect\pL}
 \end_preamble
 \use_default_options true
