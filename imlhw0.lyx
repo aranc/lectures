@@ -93,7 +93,7 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Title
 HW0
 \end_layout
 
@@ -535,7 +535,53 @@ TODO: complete this
 \end_layout
 
 \begin_layout Standard
+3.
+\end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(\frac{\partial x^{T}Ax}{\partial x}\right)_{i} & =\frac{\partial x^{T}Ax}{\partial x_{i}}\\
+ & =\frac{\partial}{\partial x_{i}}\sum_{k=0}^{n}\sum_{j=0}^{n}x_{k}A_{kj}x_{j}\\
+ & =\frac{\partial}{\partial x_{i}}\left(x_{i}\sum_{k\ne i}x_{k}A_{ki}+x_{i}\sum_{j\ne i}A_{ij}x_{j}+x_{i}^{2}A_{ii}\right)\\
+ & =\sum_{k\ne i}x_{k}A_{ki}+\sum_{j\ne i}A_{ij}x_{j}+2x_{i}A_{ii}\\
+ & =\sum_{k=0}^{n}x_{k}A_{ki}+\sum_{j=0}^{n}A_{ij}x_{j}\\
+ & =\sum_{k=0}^{n}A_{ik}^{T}x_{k}+\sum_{j=0}^{n}A_{ij}x_{j}\\
+ & =\sum_{k=0}^{n}\left(A_{ik}^{T}+A_{ik}\right)x_{k}\\
+ & =\left(\left(A+A^{T}\right)x\right)_{i}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $\frac{\partial x^{T}Ax}{\partial x}=\left(A+A^{T}\right)x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ TODO: complete this
+\end_layout
+
+\begin_layout Section*
+Decision Rules and Concentration Bounds
+\end_layout
+
+\begin_layout Standard
+1.
 \end_layout
 
 \end_body
