@@ -450,6 +450,90 @@ It is also symmetric, since for any
 
 \end_layout
 
+\begin_layout Section*
+Calculus and Probability
+\end_layout
+
+\begin_layout Standard
+1.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\sim\text{Pois}(\lambda)$
+\end_inset
+
+.
+ Using 
+\begin_inset Formula $e^{x}=\sum_{k=0}^{\infty}\frac{x^{k}}{k!}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+E(X) & =\sum_{k=0}^{\infty}k\frac{\lambda^{k}}{k!}e^{-\lambda}\\
+ & =e^{-\lambda}\sum_{k=1}^{\infty}k\frac{\lambda^{k}}{k!}\\
+ & =\lambda e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^{k-1}}{\left(k-1\right)!}\\
+ & =\lambda e^{-\lambda}\sum_{k=0}^{\infty}\frac{\lambda^{k}}{\left(k\right)!}\\
+ & =\lambda e^{-\lambda}e^{\lambda}\\
+ & =\lambda
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+\end_layout
+
+\begin_layout Standard
+(a) Show that 
+\begin_inset Formula $E(X)=E_{Y}(E(X|Y))$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \end_layout
