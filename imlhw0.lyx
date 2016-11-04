@@ -98,7 +98,35 @@ HW0
 \end_layout
 
 \begin_layout Standard
-[TODO: names + IDs]
+[TODO: names + IDs + emails]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Linear Algebra
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula 
+\begin{align*}
+\left\Vert x\right\Vert ^{2} & =\left\langle x,x\right\rangle =\left\langle c_{1}v_{1}+...+c_{p}v_{p},c_{1}v_{1}+...+c_{p}v_{p}\right\rangle \\
+ & =\sum_{i=1}^{p}\sum_{j=1}^{p}\left\langle c_{i}v_{i},c_{j}v_{j}\right\rangle \\
+ & =\sum_{i=1}^{p}\sum_{j=1}^{p}c_{i}c_{j}\left\langle v_{i},v_{j}\right\rangle \\
+ & =\sum_{i=1}^{p}\sum_{j=1}^{p}c_{i}c_{j}\delta_{ij}\\
+ & =\sum_{i=1}^{p}c_{i}c_{i}=c_{1}^{2}+...+c_{p}^{2}
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -109,7 +137,321 @@ HW0
 \end_layout
 
 \begin_layout Standard
-sfdsfd
+2.
+\end_layout
+
+\begin_layout Standard
+(a) Let 
+\begin_inset Formula $v$
+\end_inset
+
+ be a vector such that 
+\begin_inset Formula $Av=\lambda v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}v=A\lambda v=\lambda Av=\lambda^{2}v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $\lambda^{2}$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $A^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{.}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) Let 
+\begin_inset Formula $v$
+\end_inset
+
+ be a vector such that 
+\begin_inset Formula $Av=\lambda v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we will see that 
+\begin_inset Formula $A^{n}v=\lambda^{n}v$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{n}v=A^{n-1}\lambda v=\lambda A^{n-1}v=\lambda A^{n-2}\lambda v=\lambda^{2}A^{n-2}v=...=\lambda^{n-1}Av=\lambda^{n}v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $P(x)=\sum_{i=0}^{k}c_{i}x^{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P(A)v & =\left(\sum_{i=0}^{k}c_{i}A^{i}\right)v\\
+ & =\sum_{i=0}^{k}c_{i}\left(A^{i}v\right)\\
+ & =\sum_{i=0}^{k}c_{i}\left(\lambda^{i}v\right)\\
+ & =\left(\sum_{i=0}^{k}c_{i}\lambda^{i}\right)v\\
+ & =P(\lambda)v
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $P(\lambda)$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $P(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+\end_layout
+
+\begin_layout Standard
+(a) 
+\begin_inset Formula $A$
+\end_inset
+
+ is diagonalizable, therefore 
+\begin_inset Formula $A=P^{-1}DP$
+\end_inset
+
+ where 
+\begin_inset Formula $D=\text{diag}(d_{1},...,d_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tr}{\text{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) 
+\begin_inset Formula 
+\begin{align*}
+\tr(AB) & =\sum_{i=1}^{n}(AB)_{ii}\\
+ & =\sum_{i=1}^{n}(\sum_{j=1}^{n}A_{ij}B_{ji})\\
+ & =\sum_{j=1}^{n}(\sum_{i=1}^{n}B_{ji}A_{ij})\\
+ & =\sum_{j=1}^{n}(BA)_{jj}=\tr(AB)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(c) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A,B$
+\end_inset
+
+ be positive semidefinite, and let 
+\begin_inset Formula $v$
+\end_inset
+
+ be a vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v^{T}Av & =p\ge0\\
+v^{T}Bv & =q\ge0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $\theta p+(1-\theta)q\ge0$
+\end_inset
+
+ for any 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v^{T}(\theta A+(1-\theta)B)v & =\theta v^{T}Av+(1-\theta)v^{T}Bv\\
+ & =\theta p+(1-\theta)q\ge0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $\theta A+(1-\theta)B$
+\end_inset
+
+ is positive semidefinite
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is also symmetric, since for any 
+\begin_inset Formula $1\le i,j\le n$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+\left(\theta A+(1-\theta)B\right)_{ij} & =\theta A_{ij}+(1-\theta)B_{ij}\\
+ & =\theta A_{ji}+(1-\theta)B_{ji}\\
+ & =\left(\theta A+(1-\theta)B\right)_{ji}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
