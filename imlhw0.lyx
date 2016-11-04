@@ -500,6 +500,51 @@ E(X) & =\sum_{k=0}^{\infty}k\frac{\lambda^{k}}{k!}e^{-\lambda}\\
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+E(E(X|Y)) & =\sum_{y}E(X|Y=y)p(y)\\
+ & =\sum_{y}\left(\sum_{x}xPr(x|y)\right)p(y)\\
+ & =\sum_{y}\sum_{x}x\frac{Pr(y|x)Pr(x)}{Pr(y)}Pr(y)\\
+ & =\sum_{x}xPr(x)\sum_{y}Pr(y|x)\\
+ & =\sum_{x}xPr(x)\\
+ & =E(X)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\var}{\text{Var}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) Show that 
+\begin_inset Formula $\var Y=E\left(\var\left(Y|X\right)\right)+\var\left(E\left(Y|X\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\var Y & =EY^{2}+\left(EY\right)^{2}\\
+ & =E\left(E\left(Y^{2}|X\right)\right)+\left(E\left(E\left(Y|X\right)\right)\right)^{2}\\
+ & =
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Box Boxed
 position "t"
 hor_pos "c"
@@ -582,6 +627,27 @@ Decision Rules and Concentration Bounds
 
 \begin_layout Standard
 1.
+\end_layout
+
+\begin_layout Standard
+(a) 
+\begin_inset Formula 
+\begin{align*}
+Pr(y=1|x) & >Pr(y=0|x)\\
+\frac{Pr(x|y=1)Pr(y=1)}{Pr(x)} & >\frac{Pr(x|y=0)Pr(y=0)}{Pr(x)}\\
+Pr(x|y=1)\cdot p & >Pr(x|y=0)\cdot(1-p)\\
+pe^{\mbox{-}\frac{1}{2}(x-\mu_{1})^{T}\Sigma^{-1}(x-\mu_{1})} & >(1-p)\cdot e^{\mbox{-}\frac{1}{2}(x-\mu_{0})^{T}\Sigma^{-1}(x-\mu_{0})}\\
+\ln p-\frac{1}{2}(x-\mu_{1})^{T}\Sigma^{-1}(x-\mu_{1}) & >\ln\left(1-p\right)-\frac{1}{2}(x-\mu_{0})^{T}\Sigma^{-1}(x-\mu_{0})\\
+(x-\mu_{1})^{T}\Sigma^{-1}(x-\mu_{1})+(x-\mu_{0})^{T}\Sigma^{-1}(x-\mu_{0}) & >2\ln\left(\frac{1-p}{p}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[Not sure how to continue at the moment...]
 \end_layout
 
 \end_body
