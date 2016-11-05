@@ -536,9 +536,37 @@ E(E(X|Y)) & =\sum_{y}E(X|Y=y)p(y)\\
 \begin{align*}
 \var Y & =EY^{2}+\left(EY\right)^{2}\\
  & =E\left(E\left(Y^{2}|X\right)\right)+\left(E\left(E\left(Y|X\right)\right)\right)^{2}\\
- & =
+ & =E\var Y|X+\left(EY|X\right)^{2}+\left(E\left(E\left(Y|X\right)\right)\right)^{2} & (1)\\
+ & =E\var Y|X+\var EY|X & (2)
 \end{align*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using above:
+\begin_inset Formula 
+\begin{align*}
+E\var Y|X & =E\left(EY^{2}|X-\left(EY|X\right)^{2}\right) & (1)\\
+\var EY|X & =\left(EY|X\right)^{2}+\left(E\left(E\left(Y|X\right)\right)\right)^{2} & (2)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E\var Y|X=E\left(EY^{2}|X-\left(EY|X\right)^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\var EY|X=E(\left(EY^{2}|X-\left(E\left(EY|X)\right)\right)^{2}\right)$
 \end_inset
 
 
