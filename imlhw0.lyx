@@ -260,16 +260,58 @@ Therefore
 \end_layout
 
 \begin_layout Standard
-(a) 
 \begin_inset Formula $A$
 \end_inset
 
  is diagonalizable, therefore 
-\begin_inset Formula $A=P^{-1}DP$
+\begin_inset Formula $A=PDP^{-1}$
 \end_inset
 
  where 
 \begin_inset Formula $D=\text{diag}(d_{1},...,d_{n})$
+\end_inset
+
+.
+ We can also write this as 
+\begin_inset Formula $AP=DP$
+\end_inset
+
+, so for every column vector 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ in 
+\begin_inset Formula $P$
+\end_inset
+
+, 
+\begin_inset Formula $Ap_{i}=d_{i}p_{i}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $P$
+\end_inset
+
+ is invertible, the vectors 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ are a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ indepent eigenvectors.
+ Threfore 
+\begin_inset Formula $d_{1},...,d_{n}$
+\end_inset
+
+ are exactly the eigenvalues of 
+\begin_inset Formula $P$
+\end_inset
+
+, and we can write 
+\begin_inset Formula $D=\text{diag}(\lambda_{1},...,\lambda_{n}).$
 \end_inset
 
 
@@ -295,7 +337,7 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-TODO: complete this
+TODO: is the above explanation o.k.?
 \end_layout
 
 \end_inset
@@ -306,6 +348,33 @@ TODO: complete this
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\tr}{\text{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(a) 
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $\det(AB)=\det(A)\det(B)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\det(A) & =\det(PDP^{-1})\\
+ & =\det(P)\det(D)\det(P^{-1})\\
+ & =\det(PP^{-1})\det(D)\\
+ & =\det(D)\\
+ & =\lambda_{1}\cdot...\cdot\lambda_{n}
+\end{align*}
+
 \end_inset
 
 
@@ -331,27 +400,13 @@ TODO: complete this
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-TODO: complete this
-\end_layout
+\begin_inset Formula 
+\begin{align*}
+\tr(A) & =\tr(PDP^{-1})\\
+ & =\tr(P^{-1}PD)\\
+ & =\tr(D)\\
+ & =\lambda_{1}+...+\lambda_{n}
+\end{align*}
 
 \end_inset
 
@@ -564,34 +619,6 @@ E\var Y|X+\var EY|X & =EEY^{2}|X-E\left(E\left(EY|X\right)\right)^{2}\\
  & =EY^{2}-\left(EY\right)^{2}\\
  & =\var Y
 \end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-TODO: complete this
-\end_layout
 
 \end_inset
 
