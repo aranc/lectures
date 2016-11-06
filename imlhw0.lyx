@@ -117,7 +117,8 @@ Linear Algebra
  
 \begin_inset Formula 
 \begin{align*}
-\left\Vert x\right\Vert ^{2} & =\left\langle x,x\right\rangle =\left\langle c_{1}v_{1}+...+c_{p}v_{p},c_{1}v_{1}+...+c_{p}v_{p}\right\rangle \\
+\left\Vert x\right\Vert ^{2} & =\left\langle x,x\right\rangle \\
+ & =\left\langle c_{1}v_{1}+...+c_{p}v_{p},c_{1}v_{1}+...+c_{p}v_{p}\right\rangle \\
  & =\sum_{i=1}^{p}\sum_{j=1}^{p}\left\langle c_{i}v_{i},c_{j}v_{j}\right\rangle \\
  & =\sum_{i=1}^{p}\sum_{j=1}^{p}c_{i}c_{j}\left\langle v_{i},v_{j}\right\rangle \\
  & =\sum_{i=1}^{p}\sum_{j=1}^{p}c_{i}c_{j}\delta_{ij}\\
@@ -195,17 +196,44 @@ Therefore
 \end_layout
 
 \begin_layout Standard
-First we will see that 
+First we will show that 
 \begin_inset Formula $A^{n}v=\lambda^{n}v$
 \end_inset
 
-,
+ by induction,
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Av & =\lambda v
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assuming true for 
+\begin_inset Formula $n-1$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A^{n}v=A^{n-1}\lambda v=\lambda A^{n-1}v=\lambda A^{n-2}\lambda v=\lambda^{2}A^{n-2}v=...=\lambda^{n-1}Av=\lambda^{n}v
+A^{n}v=AA^{n-1}v=A\lambda^{n-1}v=\lambda^{n-1}Av=\lambda^{n}v
 \]
 
 \end_inset
