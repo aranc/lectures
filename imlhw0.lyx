@@ -112,10 +112,6 @@ HW0
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $\phantom{A}$
 \end_inset
 
@@ -360,34 +356,6 @@ Therefore
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-TODO: is the above explanation o.k.?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\tr}{\text{tr}}
 \end_inset
@@ -445,6 +413,8 @@ Using
 \begin_inset Formula 
 \begin{align*}
 \tr(A) & =\tr(PDP^{-1})\\
+ & =\tr(\left(PD\right)\left(P^{-1}\right))\\
+ & =\tr(\left(P^{-1}\right)\left(PD\right))\\
  & =\tr(P^{-1}PD)\\
  & =\tr(D)\\
  & =\lambda_{1}+...+\lambda_{n}
