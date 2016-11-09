@@ -98,11 +98,21 @@ HW0
 \end_layout
 
 \begin_layout Standard
-Danny Vainstein <dannyvainstein@gmail.com> 201040763
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}\\
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}
+\end{array}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Aran Carmon <aran.carmon@gmail.com> 038847588
+
 \end_layout
 
 \begin_layout Standard
