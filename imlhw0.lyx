@@ -626,8 +626,8 @@ And using
 We get
 \begin_inset Formula 
 \begin{align*}
-E\var Y|X+\var EY|X & =EEY^{2}|X-E\left(E\left(EY|X\right)\right)^{2}\\
- & =EY^{2}-E\left(EY\right)^{2}\\
+E\var Y|X+\var EY|X & =E\left(EY^{2}|X-\left(EY|X\right)^{2}\right)+E\left(EY|X\right)^{2}-\left(E\left(EY|X\right)\right)^{2}\\
+ & =EEY^{2}|X-\left(E\left(EY|X\right)\right)^{2}\\
  & =EY^{2}-\left(EY\right)^{2}\\
  & =\var Y
 \end{align*}
