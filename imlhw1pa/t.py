@@ -8,11 +8,12 @@ data = mnist['data']
 labels = mnist['target']
 
 import numpy.random
-idx = numpy.random.RandomState(0).choice(70000, 11000)
-train = data[idx[:10000], :]
-train_labels = labels[idx[:10000]]
-test = data[idx[10000:], :]
-test_labels = labels[idx[10000:]]
+if False:
+    idx = numpy.random.RandomState(0).choice(70000, 11000)
+    train = data[idx[:10000], :]
+    train_labels = labels[idx[:10000]]
+    test = data[idx[10000:], :]
+    test_labels = labels[idx[10000:]]
 
 #Utility function, e.g. show(train[57])
 def show(image):
@@ -23,5 +24,12 @@ def show(image):
 
 #Question 1a
 def knn(images, labels, image, k):
-    dists = np.square(images - image)
+    images = images.astype('int')
+    image = image.astype('int')
+    dists = np.linalg.norm(images - image, axis=1)
+    nearest = np.argsort(dists)[:k]
+    return labels[nearest]
+
+def go(n=12):
+    return knn(train, train_labels, test[n], 10)
 
