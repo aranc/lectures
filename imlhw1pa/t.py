@@ -28,8 +28,5 @@ def knn(images, labels, image, k):
     image = image.astype('int')
     dists = np.linalg.norm(images - image, axis=1)
     nearest = np.argsort(dists)[:k]
-    return labels[nearest]
-
-def go(n=12):
-    return knn(train, train_labels, test[n], 10)
+    return round(np.mean(labels[nearest]))
 
