@@ -30,3 +30,13 @@ def knn(images, labels, image, k):
     nearest = np.argsort(dists)[:k]
     return round(np.mean(labels[nearest]))
 
+#Question 1b
+def measure_k_10():
+    bad = 0
+    for i in range(len(test)):
+        image = test[i]
+        label = test_labels[i]
+        predicted = knn(train, train_labels, image, 10)
+        if predicted != label:
+            bad += 1
+    return 1 - float(bad)/float(len(test))

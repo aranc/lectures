@@ -17,6 +17,7 @@
 }
 \usepackage{culmus}
 \def\L{\protect\pL}
+\usepackage{minted}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -116,6 +117,100 @@ HW1
 \end_inset
 
 
+\end_layout
+
+\begin_layout Part*
+Programming Assignment
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}\\
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+1.
+ Nearest Neighbor
+\end_layout
+
+\begin_layout Standard
+a.
+ KNN:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\small\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def knn(images, labels, image, k): 
+\end_layout
+
+\begin_layout Plain Layout
+
+    images = images.astype('int')
+\end_layout
+
+\begin_layout Plain Layout
+
+    image = image.astype('int')
+\end_layout
+
+\begin_layout Plain Layout
+
+    dists = np.linalg.norm(images - image, axis=1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    nearest = np.argsort(dists)[:k]
+\end_layout
+
+\begin_layout Plain Layout
+
+    return round(np.mean(labels[nearest]))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+b.
+ We measured 83.4% correct classifications.
+ For a completely random classifier, we would expect 10% correct classifications.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c.
+ 
 \end_layout
 
 \end_body
