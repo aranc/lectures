@@ -180,7 +180,7 @@ def knn(images, labels, image, k):
 
 \begin_layout Plain Layout
 
-    return round(np.mean(labels[nearest]))
+    return stats.mode(labels[nearest]).mode[0
 \end_layout
 
 \end_inset

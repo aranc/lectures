@@ -1,6 +1,7 @@
 from __future__ import division
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import stats
 import time
 
 from sklearn.datasets import fetch_mldata
@@ -32,7 +33,7 @@ def knn(images, labels, image, k):
     image = image.astype('int')
     dists = np.linalg.norm(images - image, axis=1)
     nearest = np.argsort(dists)[:k]
-    return round(np.mean(labels[nearest]))
+    return stats.mode(labels[nearest]).mode[0]
 
 #Measure KNN
 def measure(k=10, n=1000, verbose=True):
@@ -53,6 +54,6 @@ def measure(k=10, n=1000, verbose=True):
 #Try various Ks
 def try_various_ks():
     res = [0] * 100
-    for k in range(1, 101):
+    for k in range(1, 101, 10):
         res[k] = measure(k=k)
     return res
