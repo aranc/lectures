@@ -41,7 +41,7 @@ def measure(k=10, n=1000, verbose=True):
     for i in range(len(test)):
         image = test[i]
         label = test_labels[i]
-        predicted = knn(train[:n], train_labels[:n], image, 10)
+        predicted = knn(train[:n], train_labels[:n], image, k)
         if predicted != label:
             bad += 1
     correct_ratio = 1 - float(bad)/float(len(test))
@@ -49,3 +49,10 @@ def measure(k=10, n=1000, verbose=True):
     if verbose:
         print "k:", k, "n:", n, "correct_ratio:", correct_ratio, "elapsed:", end - start
     return correct_ratio
+
+#Try various Ks
+def try_various_ks():
+    res = [0] * 100
+    for k in range(1, 101):
+        res[k] = measure(k=k)
+    return res

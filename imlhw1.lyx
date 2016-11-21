@@ -197,7 +197,7 @@ def knn(images, labels, image, k):
 
 \begin_layout Standard
 b.
- We measured 83.4% correct classifications.
+ We measured 54.4% correct classifications.
  For a completely random classifier, we would expect 10% correct classifications.
 \end_layout
 
