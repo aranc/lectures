@@ -25,7 +25,7 @@ def show(image):
     image = image.reshape(28,28)
     print(image.shape)
     plt.imshow(image)
-    plt.show(block=False)
+    plt.show()
 
 #Implement KNN
 def knn(images, labels, image, k):
