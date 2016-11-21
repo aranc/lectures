@@ -53,7 +53,7 @@ def measure(k=10, n=1000, verbose=True):
 
 #Try various Ks
 def try_various_ks():
-    res = [0] * 100
-    for k in range(1, 101, 10):
+    res = {}
+    for k in range(1, 101):
         res[k] = measure(k=k)
     return res
