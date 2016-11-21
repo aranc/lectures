@@ -213,11 +213,18 @@ c.
 \end_layout
 
 \begin_layout Standard
-Best k is 1
+\begin_inset Graphics
+	filename pics/imlhw1_1c.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-
+Best k is 1
 \end_layout
 
 \begin_layout Section*
