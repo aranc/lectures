@@ -1,6 +1,7 @@
 from __future__ import division
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 from sklearn.datasets import fetch_mldata
 mnist = fetch_mldata('MNIST original')
@@ -8,7 +9,10 @@ data = mnist['data']
 labels = mnist['target']
 
 import numpy.random
-if False:
+try:
+    idx
+except NameError:
+    print("creating train and test.")
     idx = numpy.random.RandomState(0).choice(70000, 11000)
     train = data[idx[:10000], :]
     train_labels = labels[idx[:10000]]
@@ -22,7 +26,7 @@ def show(image):
     plt.imshow(image)
     plt.show(block=False)
 
-#Question 1a
+#Implement KNN
 def knn(images, labels, image, k):
     images = images.astype('int')
     image = image.astype('int')
@@ -30,13 +34,18 @@ def knn(images, labels, image, k):
     nearest = np.argsort(dists)[:k]
     return round(np.mean(labels[nearest]))
 
-#Question 1b
-def measure_k_10():
+#Measure KNN
+def measure(k=10, n=1000, verbose=True):
+    start = time.time()
     bad = 0
     for i in range(len(test)):
         image = test[i]
         label = test_labels[i]
-        predicted = knn(train, train_labels, image, 10)
+        predicted = knn(train[:n], train_labels[:n], image, 10)
         if predicted != label:
             bad += 1
-    return 1 - float(bad)/float(len(test))
+    correct_ratio = 1 - float(bad)/float(len(test))
+    end = time.time()
+    if verbose:
+        print "k:", k, "n:", n, "correct_ratio:", correct_ratio, "elapsed:", end - start
+    return correct_ratio
