@@ -89,7 +89,7 @@ def plot_2a():
     for x in (0.25, 0.5, 0.75):
         plt.plot([x,x],[-.1,1.1],'k--')
     x, y = draw_samples(100)
-    plt.plot(x, y, 'ko')
+    plt.plot(x, y, 'k.')
     plt.ylim([-.1,1.1])
     idx = numpy.argsort(x)
     intervals = find_best_interval(x[idx], y[idx], k=2)
