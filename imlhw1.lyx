@@ -227,6 +227,21 @@ c.
 Best k is 1
 \end_layout
 
+\begin_layout Standard
+d.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_1d.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 2.
  Union of intervals

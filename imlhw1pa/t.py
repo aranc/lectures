@@ -57,3 +57,10 @@ def try_various_ks():
     for k in range(1, 101):
         res[k] = measure(k=k)
     return res
+
+#Try various Ns
+def try_various_ns():
+    res = {}
+    for n in range(100, 5000 + 1, 100):
+        res[n] = measure(k=1, n=n)
+    return res
