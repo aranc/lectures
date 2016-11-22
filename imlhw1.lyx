@@ -263,5 +263,28 @@ a.
 
 \end_layout
 
+\begin_layout Standard
+b.
+ The hypothesis with the smallest error is the Bayes hypothesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h^{*}(x)=\begin{cases}
+1 & x\in[0,0.25]\bigcup[0.5,0.75]\\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
