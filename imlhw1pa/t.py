@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import time
+import pickle
 
 from sklearn.datasets import fetch_mldata
 mnist = fetch_mldata('MNIST original')
@@ -142,4 +143,24 @@ def measure_intervals_T_times(m=50, k=2, T=100):
         true_errors[t], empirical_errors[t] = measure_intervals(m, k)
     return np.mean(true_errors), np.mean(empirical_errors)
 
+def prepare_2c():
+    empirical_errors = {}
+    true_errors = {}
+    k = 2
+    for m in range(10, 100 + 1, 5):
+        start = time.time()
+        true_errors[m], empirical_errors[m] = measure_intervals_T_times(m, k, 100)
+        end = time.time()
+        print "m:",m, "true_error:",true_errors[m], "empirical_error:",empirical_errors[m],"elapsed:",end-start
+    pickle.dump([true_errors, empirical_errors], open("2c.pkl", "w"))
+    return true_errors, empirical_errors
 
+def plot_2c():
+    true_errors, empirical_errors = pickle.load(open("2c.pkl"))
+    ms = range(10, 100 + 1, 5)
+    plt.plot(ms, [true_errors[m] for m in ms], 'k-', label='True error')
+    plt.plot(ms, [empirical_errors[m] for m in ms],'k--', label='Empirical error')
+    plt.legend()
+    plt.show()
+
+plot_2c()
