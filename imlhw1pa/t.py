@@ -121,4 +121,25 @@ def calculate_true_error(intervals):
            0.9 * (calc_area(intervals, 0.75, 1.0)) +            \
            0.1 * (.25 - (calc_area(intervals, 0.75, 1.0)))
 
+#measure intervals ERM errors
+def measure_intervals(m=50, k=2):
+    #draw sample
+    x, y = draw_samples(m)
+    #sort sample
+    idx = numpy.argsort(x)
+    x = x[idx]
+    y = y[idx]
+    #run ERM
+    intervals, error = find_best_interval(x, y, k)
+    empirical_error = float(error) / float(m)
+    true_error = calculate_true_error(intervals)
+    return true_error, empirical_error
+
+def measure_intervals_T_times(m=50, k=2, T=100):
+    empirical_errors = numpy.zeros(T)
+    true_errors = numpy.zeros(T)
+    for t in range(T):
+        true_errors[t], empirical_errors[t] = measure_intervals(m, k)
+    return np.mean(true_errors), np.mean(empirical_errors)
+
 
