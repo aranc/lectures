@@ -178,14 +178,17 @@ Let
 \end_inset
 
  points.
- Draw the smallest rectangle containing all points.
- If at least one of the points is inside this rectangle, the we cannot give
- it a negative classification while giving a positive classification to
- the rest of the points.
+ Draw the tightest rectangle containing all points.
+ If at least one of the points is inside this rectangle, then we cannot
+ give it a negative classification while giving a positive classification
+ to the rest of the points.
 \end_layout
 
 \begin_layout Standard
-Otherwise -> TODO complete this
+Otherwise there is at least one point that is on the edge of the tightest
+ rectangle containing all other 4 points.
+ And we cannot give it a negative classification while giving a positive
+ classification to the rest of the points.
 \end_layout
 
 \begin_layout Standard
