@@ -163,4 +163,32 @@ def plot_2c():
     plt.legend()
     plt.show()
 
-plot_2c()
+def prepare_2e():
+    empirical_errors = {}
+    true_errors = {}
+    m = 50
+    for k in range(1, 20 + 1, 1):
+        start = time.time()
+        true_errors[k], empirical_errors[k] = measure_intervals_T_times(m, k, 100)
+        end = time.time()
+        print "k:",k, "true_error:",true_errors[k], "empirical_error:",empirical_errors[k],"elapsed:",end-start
+    pickle.dump([true_errors, empirical_errors], open("2e.pkl", "w"))
+    return true_errors, empirical_errors
+
+def plot_2e():
+    true_errors, empirical_errors = pickle.load(open("2e.pkl"))
+    ks = range(1, 20 + 1, 1)
+    plt.plot(ks, [true_errors[k] for k in ks], 'ko-', label='True error')
+    plt.plot(ks, [empirical_errors[k] for k in ks],'ko--', label='Empirical error')
+    plt.legend()
+    plt.show()
+
+#prepare_2e()
+#plot_2e()
+
+def answer_2d():
+    res = {}
+    ks = range(1, 20 + 1, 1)
+    for k in ks:
+        res[k] = measure_intervals(50, k)
+        print k, res[k]
