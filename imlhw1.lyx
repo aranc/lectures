@@ -136,6 +136,56 @@ Theory Questions
 
 \begin_layout Standard
 2.
+ The VCdim is 
+\begin_inset Formula $4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Example of a shattered 4 points set:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/imlhw1_t1.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By symmetry, we covered all cases (no points and all points are trivial).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of any 
+\begin_inset Formula $5$
+\end_inset
+
+ points.
+ Draw the smallest rectangle containing all points.
+ If at least one of the points is inside this rectangle, the we cannot give
+ it a negative classification while giving a positive classification to
+ the rest of the points.
+\end_layout
+
+\begin_layout Standard
+Otherwise -> TODO complete this
 \end_layout
 
 \begin_layout Standard
