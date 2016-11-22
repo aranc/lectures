@@ -64,3 +64,20 @@ def try_various_ns():
     for n in range(100, 5000 + 1, 100):
         res[n] = measure(k=1, n=n)
     return res
+
+#Draw samples for question 2
+def draw_samples(m=100):
+    x = numpy.random.uniform(0,1,m)
+    y = numpy.random.uniform(0,1,m)
+    for i in range(m):
+        p = 0
+        if x[i] < 0.25:
+            p = 0.8
+        elif x[i] < 0.5:
+            p = 0.1
+        elif x[i] < 0.75:
+            p = 0.8
+        else:
+            p = 0.1
+        y[i] = 1 if y[i] < p else 0
+    return x, y
