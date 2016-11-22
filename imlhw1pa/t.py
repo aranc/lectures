@@ -101,19 +101,22 @@ def plot_2a():
 #Calculate the true error for a set of intervals
 def calculate_true_error(intervals):
     def calc_area(intervals, _from, _to):
+        area = 0
         for interval in intervals:
             interval_start = interval[0]
             interval_end = interval[1]
             start = max(_from, interval_start)
             end = min(_to, interval_end)
-            return max(0, end - start)
-    return 0.2 * (calc_area(intervals, 0.0, 0.25)) +        \
-           0.8 * (1 - (calc_area(intervals, 0.0, 0.25))) +  \
-           0.9 * (calc_area(intervals, 0.25, 0.5)) +        \
-           0.1 * (1 - (calc_area(intervals, 0.25, 0.5))) +  \
-           0.2 * (calc_area(intervals, 0.5, 0.75)) +        \
-           0.8 * (1 - (calc_area(intervals, 0.5, 0.75))) +  \
-           0.9 * (calc_area(intervals, 0.75, 1.0)) +        \
-           0.1 * (1 - (calc_area(intervals, 0.75, 1.0)))
+            area += max(0, end - start)
+        #print "from:",_from,"to:",_to,"area:",area
+        return area
+    return 0.2 * (calc_area(intervals, 0.0, 0.25)) +            \
+           0.8 * (.25 - (calc_area(intervals, 0.0, 0.25))) +    \
+           0.9 * (calc_area(intervals, 0.25, 0.5)) +            \
+           0.1 * (.25 - (calc_area(intervals, 0.25, 0.5))) +    \
+           0.2 * (calc_area(intervals, 0.5, 0.75)) +            \
+           0.8 * (.25 - (calc_area(intervals, 0.5, 0.75))) +    \
+           0.9 * (calc_area(intervals, 0.75, 1.0)) +            \
+           0.1 * (.25 - (calc_area(intervals, 0.75, 1.0)))
 
 
