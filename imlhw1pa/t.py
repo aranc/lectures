@@ -81,3 +81,19 @@ def draw_samples(m=100):
             p = 0.1
         y[i] = 1 if y[i] < p else 0
     return x, y
+
+from intervals import find_best_interval
+
+#Plot 2_a
+def plot_2a():
+    for x in (0.25, 0.5, 0.75):
+        plt.plot([x,x],[-.1,1.1],'k--')
+    x, y = draw_samples(100)
+    plt.plot(x, y, 'ko')
+    plt.ylim([-.1,1.1])
+    idx = numpy.argsort(x)
+    intervals = find_best_interval(x[idx], y[idx], k=2)
+    for interval in intervals[0]:
+        print interval
+        plt.plot(interval, [0.5,0.5], 'k', linewidth=10)
+    plt.show()
