@@ -125,6 +125,157 @@ Theory Questions
 
 \begin_layout Standard
 1.
+ Given a sample 
+\begin_inset Formula $S$
+\end_inset
+
+ of size 
+\begin_inset Formula $m$
+\end_inset
+
+, find the tightest fit circle.
+ Define 
+\begin_inset Formula $r'$
+\end_inset
+
+ to be the radius of that circle.
+ And define 
+\begin_inset Formula $r$
+\end_inset
+
+ to be the true radius we are trying to learn.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{r'}\subseteq C_{r}$
+\end_inset
+
+ therefore the only possible error is labeling positive samples as negative.
+\end_layout
+
+\begin_layout Standard
+A sample will mislead us only if it is too concentrated in the middle.
+ Therefore our task is to show that with a high enough 
+\begin_inset Formula $m$
+\end_inset
+
+, the sample with high probability will not be too concentrated.
+\end_layout
+
+\begin_layout Standard
+We will construct a ring 
+\begin_inset Formula $R=\left\{ (x,y):r_{ring}^{2}<x^{2}+y^{2}<r^{2}\right\} $
+\end_inset
+
+ such that 
+\begin_inset Formula $D(R)=\epsilon$
+\end_inset
+
+.
+ (It is possible that we can extend 
+\begin_inset Formula $R$
+\end_inset
+
+ to cover all 
+\begin_inset Formula $C_{r}$
+\end_inset
+
+ and still have 
+\begin_inset Formula $D(R)<\epsilon$
+\end_inset
+
+.
+ In that case the error is clearly smaller than 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Let the ring 
+\begin_inset Formula $R'$
+\end_inset
+
+ be the ring from the edge of 
+\begin_inset Formula $C_{r}$
+\end_inset
+
+ to the first sample.
+ We would want to have 
+\begin_inset Formula $R'\subseteq R$
+\end_inset
+
+.
+ If that is the case, we obtained our requirement since
+\begin_inset Formula 
+\[
+\text{error}(C_{r'})=D(C_{r}\bigtriangleup C_{r'})=D(R')\le D(R)=\epsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the construction, if there is at least one sampled point that resides
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+, it implies 
+\begin_inset Formula $R'\subseteq R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We will now ask what is the probability of receiving a bad sample.
+ That is a sample with no points in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pr}{\text{Pr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\pr\left[\text{error}>\epsilon\right] & \le\pr\left[\forall x\in S,\,x\notin R\right]\\
+ & \le(1-\epsilon)^{m}\\
+ & \le e^{\mbox{-}\epsilon m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we will need to choose a sample size 
+\begin_inset Formula $m$
+\end_inset
+
+ such that 
+\begin_inset Formula $e^{\mbox{-}\epsilon m}\le\delta$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $m\ge\frac{1}{\epsilon}\ln\frac{1}{\delta}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
