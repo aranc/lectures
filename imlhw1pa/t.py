@@ -97,3 +97,6 @@ def plot_2a():
         print interval
         plt.plot(interval, [0.5,0.5], 'k', linewidth=10)
     plt.show()
+
+#Calculate the true error for a set of intervals
+def calculate_true_error(intervals):
