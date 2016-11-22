@@ -100,6 +100,8 @@ def plot_2a():
 
 #Calculate the true error for a set of intervals
 def calculate_true_error(intervals):
+    #calc_area integrates from _from to _to
+    #the function 1 if x in intervals, 0 otherwise
     def calc_area(intervals, _from, _to):
         area = 0
         for interval in intervals:
