@@ -6,6 +6,8 @@ import time
 import pickle
 import itertools
 
+#lst: list of numbers
+#C: pair of numbers
 def apply_concept(lst, C):
     CP, CN = C
     r = 0
@@ -15,28 +17,34 @@ def apply_concept(lst, C):
         if (~e) & CN != 0: r |= (1<<i)
     return r
 
-def count_divisions(lst, H):
+#lst: list of numbers
+def count_divisions(lst, nbits):
     s = set()
-    for CP in range(2**H):
-        for CN in range(2**H):
-            s.add(apply_concept(lst, (CP, CN)))
-    return len(s)
+    S = set()
+    for CP in range(2**nbits):
+        for CN in range(2**nbits):
+            r = apply_concept(lst, (CP, CN))
+            if r not in s:
+                s.add(r)
+                S.add((r,(CP,CN)))
+    return len(s), sorted(list(S))
 
-def lsts(H, n):
-    for e in itertools.combinations(range(2**H), n):
+def lsts(nbits, n):
+    for e in itertools.combinations(range(2**nbits), n):
         yield e
 
-def find_max_divisions(H, n):
+def find_max_divisions(nbits, n):
     _max = 0
-    for lst in lsts(H, n):
-        c = count_divisions(lst, H)
+    for lst in lsts(nbits, n):
+        c,S = count_divisions(lst, nbits)
         if c > _max:
             _max = c
             #print "found example with", c, "divisions"
-            if c == 2**H:
-                print "SHUTTER (H:",H,"n:",n,")"
+            if c == 2**n:
+                print "SHUTTER (nbits:",nbits,"n:",n,")"
                 print lst
+                print S
 
-def go(H):
-    for n in range(2**H):
-        find_max_divisions(H, n)
+def go(nbits):
+    for n in range(2**nbits):
+        find_max_divisions(nbits, n)
