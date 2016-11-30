@@ -353,6 +353,52 @@ Otherwise there is at least one point that is on the edge of the tightest
 3.
 \end_layout
 
+\begin_layout Standard
+Example for a set of size 
+\begin_inset Formula $n$
+\end_inset
+
+ that can be shuttered:
+\end_layout
+
+\begin_layout Standard
+Take the set of vectors that have only one place set to 1 and the other
+ places set to 0.
+\end_layout
+
+\begin_layout Standard
+e.g.
+ for 
+\begin_inset Formula $n=4$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+0001
+\end_layout
+
+\begin_layout Standard
+0010
+\end_layout
+
+\begin_layout Standard
+0100
+\end_layout
+
+\begin_layout Standard
+1000
+\end_layout
+
+\begin_layout Standard
+A concept with 
+\begin_inset Formula $T_{2}=\phi$
+\end_inset
+
+, will give 
+\end_layout
+
 \begin_layout Part*
 Programming Assignment
 \end_layout
