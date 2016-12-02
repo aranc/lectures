@@ -769,7 +769,7 @@ def knn(images, labels, image, k):
 
 \begin_layout Plain Layout
 
-    return stats.mode(labels[nearest]).mode[0
+    return stats.mode(labels[nearest]).mode[0]
 \end_layout
 
 \end_inset
@@ -788,6 +788,10 @@ def knn(images, labels, image, k):
 b.
  We measured 86.8% correct classifications.
  For a completely random classifier, we would expect 10% correct classifications.
+\end_layout
+
+\begin_layout Standard
+How to run:
 \end_layout
 
 \begin_layout Standard
@@ -907,6 +911,42 @@ e.
 
 \begin_layout Standard
 f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+How to run:
+\end_layout
+
+\begin_layout Plain Layout
+python 
+\begin_inset Formula $\sim$
+\end_inset
+
+arancarmon/imlhw/1/draft/tt2.py <image output location>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
