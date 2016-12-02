@@ -102,8 +102,8 @@ HW1
 \begin_inset Formula 
 \[
 \begin{array}{ccc}
-\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}\\
-\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}
 \end{array}
 \]
 
@@ -125,7 +125,7 @@ Theory Questions
 
 \begin_layout Standard
 1.
- Given a sample 
+ We will use the following algorithm: Given a sample 
 \begin_inset Formula $S$
 \end_inset
 
@@ -134,7 +134,10 @@ Theory Questions
 \end_inset
 
 , find the tightest fit circle.
- Define 
+\end_layout
+
+\begin_layout Standard
+Proof: Define 
 \begin_inset Formula $r'$
 \end_inset
 
@@ -262,7 +265,7 @@ We will now ask what is the probability of receiving a bad sample.
 \end_layout
 
 \begin_layout Standard
-So we will need to choose a sample size 
+So it is enough to choose a sample size 
 \begin_inset Formula $m$
 \end_inset
 
@@ -400,15 +403,18 @@ A concept with
 \end_layout
 
 \begin_layout Part*
-Programming Assignment
+\begin_inset Newpage pagebreak
+\end_inset
+
+HW1: Programming Assignment
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
 \begin{array}{ccc}
-\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}\\
-\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}
+\text{Aran Carmon} & \text{<aran.carmon@gmail.com>} & \text{038847588}\\
+\text{Danny Vainstein} & \text{<dannyvainstein@gmail.com>} & \text{201040763}
 \end{array}
 \]
 
