@@ -354,6 +354,16 @@ Otherwise there is at least one point that is on the edge of the tightest
 
 \begin_layout Standard
 3.
+ The VCdim is 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ (for 
+\begin_inset Formula $n\ge2).$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -399,7 +409,110 @@ A concept with
 \begin_inset Formula $T_{2}=\phi$
 \end_inset
 
-, will give 
+, will classify as 
+\begin_inset Formula $1$
+\end_inset
+
+ a vector with the i
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+th
+\end_layout
+
+\end_inset
+
+ place set, if and only if 
+\begin_inset Formula $i\in T_{1}$
+\end_inset
+
+.
+ Therefore this set is shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors can not be shuttered.
+\end_layout
+
+\begin_layout Standard
+We will show this using the following 
+\begin_inset Quotes eld
+\end_inset
+
+inductive
+\begin_inset Quotes erd
+\end_inset
+
+ argument: first we will show that if it was possible to shutter a set of
+ 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors, each with length of 
+\begin_inset Formula $n$
+\end_inset
+
+ bits, then it is also possible to shutter a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors with length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits each.
+\end_layout
+
+\begin_layout Standard
+And then we will show that a set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors with length of 
+\begin_inset Formula $2$
+\end_inset
+
+ bits can't be shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose we have a set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors of length 
+\begin_inset Formula $n$
+\end_inset
+
+ bits that are shuttered.
+ Then at least two of the vectors agree on at least one bit.
+\end_layout
+
+\begin_layout Standard
+If we ignore this bit, in the vectors and in the concepts, then we have
+ a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors
 \end_layout
 
 \begin_layout Part*
