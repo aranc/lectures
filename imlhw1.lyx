@@ -507,12 +507,202 @@ Suppose we have a set of
 \end_layout
 
 \begin_layout Standard
-If we ignore this bit, in the vectors and in the concepts, then we have
- a set of 
+We ignore this bit, in the vectors and in the concepts.
+\end_layout
+
+\begin_layout Standard
+We now have a set of 
 \begin_inset Formula $n$
 \end_inset
 
- vectors
+ vectors (the two vectors mentioned above are identical now, so we treat
+ them as one vector.
+ We don't need to be concerned at the moment about the possibility of other
+ vectors being the same).
+ each vector now has the length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits.
+\end_layout
+
+\begin_layout Standard
+We now take only the concepts that gave 1 on the first vector, and 0 on
+ the second vector.
+ Since they separated the two vectors, these concepts didn't include the
+ shared bit in 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, and ignoring it does not change how they split the set.
+ 
+\end_layout
+
+\begin_layout Standard
+Since the original set was shuttered, this new set is also shuttered.
+\end_layout
+
+\begin_layout Standard
+So we have a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors, with length of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ bits, that are shuttered.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To complete the proof, we will show that for vectors of length 
+\begin_inset Formula $2$
+\end_inset
+
+ bits, no set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors can shuttered.
+ Therefore no set of 
+\begin_inset Formula $n+1$
+\end_inset
+
+ vectors with 
+\begin_inset Formula $n$
+\end_inset
+
+ bits can be shuttered.
+ Therefore the VCdim is 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\phantom{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of 
+\begin_inset Formula $3$
+\end_inset
+
+ vectors of length 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $00\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $11$
+\end_inset
+
+ and not 
+\begin_inset Formula $01$
+\end_inset
+
+ or 
+\begin_inset Formula $10$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $11\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $00$
+\end_inset
+
+ and not 
+\begin_inset Formula $01$
+\end_inset
+
+ or 
+\begin_inset Formula $10$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $10\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $01$
+\end_inset
+
+ and not 
+\begin_inset Formula $11$
+\end_inset
+
+ or 
+\begin_inset Formula $00$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $01\notin S$
+\end_inset
+
+, then there is no concept that classify as 1 only 
+\begin_inset Formula $10$
+\end_inset
+
+ and not 
+\begin_inset Formula $11$
+\end_inset
+
+ or 
+\begin_inset Formula $00$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+No set of size 
+\begin_inset Formula $3$
+\end_inset
+
+ can be shuttered.
 \end_layout
 
 \begin_layout Part*

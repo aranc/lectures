@@ -48,3 +48,28 @@ def find_max_divisions(nbits, n):
 def go(nbits):
     for n in range(2**nbits):
         find_max_divisions(nbits, n)
+
+def cncpts():
+    for i in range(4):
+        for j in range(4):
+            yield(i, j)
+
+def apply_concept2(lst, C):
+    CP, CN = C
+    S = set()
+    for i in range(len(lst)):
+        e = lst[i]
+        if e & CP != 0:
+            S.add(e)
+        if (~e) & CN != 0:
+            S.add(e)
+    return S
+
+def go2():
+    lst = [0,1,3]
+    S = {}
+    for cncpt in cncpts():
+        accptd = apply_concept2(lst, cncpt)
+        accptd = tuple(sorted(list(accptd)))
+        S[accptd] = cncpt
+    return S
